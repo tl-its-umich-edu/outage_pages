@@ -1,4 +1,4 @@
-FROM apache2-cosign:2.4.29
+FROM apache2-cosign:2.4
 
 #EXPOSE 80
 EXPOSE 443
