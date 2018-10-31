@@ -1,15 +1,11 @@
 FROM umich-httpd-auth:2.4
 
-#EXPOSE 8443
+MAINTAINER Teaching and Learning <its.tl.dev@umich.edu>
 
-#RUN rm /usr/local/apache2/htdocs/index.html
-
-### Start script incorporates config files and sends logs to stdout ###
 WORKDIR /usr/local/apache2
-COPY start.sh .
-RUN chmod +x start.sh
 
 ### Copy individual outage pages to the root directory in apache.
 COPY static/ /usr/local/apache2/htdocs/
 
-CMD /usr/local/apache2/start.sh
+# start.sh inherited from umich-httpd-auth
+CMD /usr/local/bin/start.sh
